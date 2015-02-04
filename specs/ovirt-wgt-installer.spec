@@ -11,7 +11,7 @@ Packager:	Lev Veyde <lveyde@redhat.com>
 BuildRequires:	mingw32-nsis >= 2.46
 BuildRequires:	mingw32-spice-vdagent >= 0.7.2
 BuildRequires:	mingw64-spice-vdagent >= 0.7.2
-BuildRequires:	ovirt-ga-win
+BuildRequires:	ovirt-guest-agent-windows
 BuildRequires:	vcredist-x86
 BuildRequires:	virtio-win-drivers
 BuildRequires:	spice-qxl
@@ -32,10 +32,11 @@ cp /usr/i686-w64-mingw32/sys-root/mingw/bin/vdservice.exe bin/vdagent_x86/
 cp /usr/x86_64-w64-mingw32/sys-root/mingw/bin/vdagent.exe bin/vdagent_x64/
 cp /usr/x86_64-w64-mingw32/sys-root/mingw/bin/vdservice.exe bin/vdagent_x64/
 
-cp %{_datadir}/artifacts/ovirt-ga-win/OVirtGuestService.exe bin/
-cp %{_datadir}/artifacts/ovirt-ga-win/default.ini bin/
-cp %{_datadir}/artifacts/ovirt-ga-win/default-logger.ini bin/
-cp %{_datadir}/artifacts/ovirt-ga-win/ovirt-guest-agent.ini bin/
+OVIRTGA=ovirt-guest-agent-windows
+cp %{_datadir}/artifacts/$OVIRTGA/OVirtGuestService.exe bin/
+cp %{_datadir}/artifacts/$OVIRTGA/default.ini bin/
+cp %{_datadir}/artifacts/$OVIRTGA/default-logger.ini bin/
+cp %{_datadir}/artifacts/$OVIRTGA/ovirt-guest-agent.ini bin/
 cp %{_datadir}/artifacts/vcredist-x86/vcredist_x86.exe bin/
 
 cp -a %{_datadir}/artifacts/virtio-win-drivers/* drivers/virtio/

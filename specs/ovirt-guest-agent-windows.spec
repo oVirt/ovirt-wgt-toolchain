@@ -1,4 +1,4 @@
-Name:		ovirt-ga-win
+Name:		ovirt-guest-agent-windows
 Version:	1.0.10.3
 Release:	1
 Summary:	oVirt Guest Agent Service for Windows
