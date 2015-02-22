@@ -9,9 +9,9 @@ BuildArch:	noarch
 Packager:	Lev Veyde <lveyde@redhat.com>
 
 BuildRequires:	p7zip
-BuildRequires:	py2exe-py2.7
+BuildRequires:	py2exe-py2.7 = 0.6.9
 BuildRequires:	python-windows = 2.7.8
-BuildRequires:	pywin32-py2.7
+BuildRequires:	pywin32-py2.7 = 219
 BuildRequires:	wine
 BuildRequires:	wget
 
