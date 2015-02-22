@@ -47,6 +47,7 @@ rm -f ./py2exe_postinstall.py
 popd
 
 pushd ovirt-guest-agent
+mkdir -p build/bdist.win32/winexe/bundle-2.7/
 cp  ~/.wine/drive_c/Python27/python27.dll build/bdist.win32/winexe/bundle-2.7/
 wineconsole win-guest-agent-build-exe.bat
 popd
