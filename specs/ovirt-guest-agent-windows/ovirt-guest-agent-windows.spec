@@ -1,9 +1,9 @@
 Name:		ovirt-guest-agent-windows
-Version:	1.0.10.3
-Release:	1
+Version:	%{version}
+Release:	%{release}
 Summary:	oVirt Guest Agent Service for Windows
 License:	ASL 2.0
-Source:		https://evilissimo.fedorapeople.org/releases/ovirt-guest-agent/1.0.10/ovirt-guest-agent-1.0.10.3.tar.bz2
+Source:		https://evilissimo.fedorapeople.org/releases/ovirt-guest-agent/1.0.10/ovirt-guest-agent-%{version}.tar.bz2
 URL:		http://www.ovirt.org/
 BuildArch:	noarch
 Packager:	Lev Veyde <lveyde@redhat.com>
