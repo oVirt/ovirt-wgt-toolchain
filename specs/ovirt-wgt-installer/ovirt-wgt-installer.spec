@@ -1,9 +1,9 @@
 Name:		ovirt-wgt-installer
-Version:	0.9.1
-Release:	2
+Version:	%{version}
+Release:	%{release}
 Summary:	oVirt Windows Guest Tools Installer
 License:	GPLv2 and GPLv2+ and ASL 2.0 and Zlib and MIT and Python and Platform SDK Redistributable EULA and Microsoft DDK Redistributable EULA
-Source:		http://resources.ovirt.org/pub/ovirt-3.5-snapshot/src/ovirt-wgt-0.9.1.tgz
+Source:		http://resources.ovirt.org/pub/ovirt-3.5-snapshot/src/ovirt-wgt-%{version}.tgz
 URL:		http://www.ovirt.org/Features/oVirt_Windows_Guest_Tools
 BuildArch:	noarch
 Packager:	Lev Veyde <lveyde@redhat.com>
