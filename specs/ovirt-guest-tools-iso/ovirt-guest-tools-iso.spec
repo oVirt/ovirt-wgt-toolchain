@@ -13,6 +13,8 @@ Packager:	Lev Veyde <lveyde@redhat.com>
 BuildRequires:	genisoimage
 BuildRequires:	ovirt-wgt-installer-iso
 
+Obsoletes:	ovirt-guest-tools
+
 %description
 Windows Guest tools ISO for oVirt Virtualization Manager.
 
