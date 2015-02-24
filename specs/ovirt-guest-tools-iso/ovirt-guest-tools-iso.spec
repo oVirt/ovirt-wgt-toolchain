@@ -1,6 +1,6 @@
 Name:		ovirt-guest-tools-iso
-Version:	3.5
-Release:	7
+Version:	%{version}
+Release:	%{release}
 Summary:	oVirt Windows Guest Tools
 License:	GPLv2 and GPLv2+ and ASL 2.0 and Zlib and MIT and Python and Platform SDK Redistributable EULA and Microsoft DDK Redistributable EULA
 Source0:	COPYING.csv
