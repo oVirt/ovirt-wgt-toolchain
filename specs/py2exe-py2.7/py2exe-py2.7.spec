@@ -1,9 +1,12 @@
-Name:		py2exe-py2.7
+%global		_basename py2exe
+%global		_pyver py2.7
+
+Name:		%{_basename}-%{_pyver}
 Version:	0.6.9
 Release:	1
 Summary:	RPM wrapper for %{name}
 License:	MIT
-Source:		http://switch.dl.sourceforge.net/project/py2exe/py2exe/0.6.9/py2exe-0.6.9.win32-py2.7.exe
+Source:		http://sourceforge.net/projects/%{_basename}/files/%{_basename}/%{version}/%{_basename}-%{version}.win32-%{_pyver}.exe
 URL:		http://www.py2exe.org/
 BuildArch:	noarch
 Packager:	Lev Veyde <lveyde@redhat.com>

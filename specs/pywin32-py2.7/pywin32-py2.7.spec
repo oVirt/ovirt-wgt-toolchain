@@ -1,9 +1,12 @@
-Name:		pywin32-py2.7
+%global		_basename pywin32
+%global		_pyver py2.7
+
+Name:		%{_basename}-%{_pyver}
 Version:	219
 Release:	1
 Summary:	RPM wrapper for %{name}
 License:	Python
-Source:		http://switch.dl.sourceforge.net/project/pywin32/pywin32/Build%20219/pywin32-219.win32-py2.7.exe
+Source:		http://sourceforge.net/projects/%{_basename}/files/%{_basename}/Build%20%{version}/%{_basename}-%{version}.win32-%{_pyver}.exe
 URL:		http://sourceforge.net/projects/pywin32/
 BuildArch:	noarch
 Packager:	Lev Veyde <lveyde@redhat.com>
