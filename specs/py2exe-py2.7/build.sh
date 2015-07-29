@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NAME="py2exe"
+NAME="py2exe-py2.7"
 
 SCRIPTDIR="$(dir="$(readlink -f "$(dirname "$0")")" && cd "${dir}" && pwd)"
 rm -rf "${SCRIPTDIR}/noarch" "${SCRIPTDIR}"/*.rpm "${SCRIPTDIR}"/*.exe
