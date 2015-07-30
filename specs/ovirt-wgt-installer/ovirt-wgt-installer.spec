@@ -42,7 +42,7 @@ cp %{_datadir}/artifacts/vcredist-x86/vcredist_x86.exe bin/
 cp -a %{_datadir}/artifacts/virtio-win-drivers/* drivers/virtio/
 cp -a %{_datadir}/artifacts/spice-qxl/* drivers/qxl/
 
-makensis installer.nsis
+makensis win-guest-tools.nsis
 
 %install
 DST=%{buildroot}%{_datadir}/artifacts/%{name}/
