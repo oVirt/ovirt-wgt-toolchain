@@ -1,6 +1,6 @@
 Name:		spice-qxl
 Version:	0.1
-Release:	21.1
+Release:	21.1%{?dist}
 Summary:	RPM wrapper for %{name}
 License:	GPLv2+
 Source0:	http://www.spice-space.org/download/windows/qxl/qxl-0.1-21/qxl_xp_x86.zip

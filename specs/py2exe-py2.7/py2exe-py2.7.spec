@@ -3,7 +3,7 @@
 
 Name:		%{_basename}-%{_pyver}
 Version:	0.6.9
-Release:	1
+Release:	1%{?dist}
 Summary:	RPM wrapper for %{name}
 License:	MIT
 Source:		http://sourceforge.net/projects/%{_basename}/files/%{_basename}/%{version}/%{_basename}-%{version}.win32-%{_pyver}.exe

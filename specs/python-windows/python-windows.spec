@@ -1,6 +1,6 @@
 Name:		python-windows
 Version:	2.7.8
-Release:	1
+Release:	1%{?dist}
 Summary:	RPM wrapper for %{name}
 License:	Python
 Source:		https://www.python.org/ftp/python/2.7.8/python-2.7.8.msi

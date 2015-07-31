@@ -3,7 +3,7 @@
 
 Name:		%{_basename}-%{_pyver}
 Version:	219
-Release:	1
+Release:	1%{?dist}
 Summary:	RPM wrapper for %{name}
 License:	Python
 Source:		http://sourceforge.net/projects/%{_basename}/files/%{_basename}/Build%20%{version}/%{_basename}-%{version}.win32-%{_pyver}.exe

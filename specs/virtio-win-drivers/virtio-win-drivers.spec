@@ -1,6 +1,6 @@
 Name:		virtio-win-drivers
 Version:	0.1
-Release:	109.1
+Release:	109.1%{?dist}
 Summary:	RPM wrapper for %{name}
 License:	GPLv2
 #Stable

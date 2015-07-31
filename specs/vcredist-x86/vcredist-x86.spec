@@ -1,6 +1,6 @@
 Name:		vcredist-x86
 Version:	2008.sp1
-Release:	1
+Release:	1%{?dist}
 Summary:	RPM wrapper for %{name}
 License:	Platform SDK Redistributable EULA
 Source:		http://download.microsoft.com/download/d/d/9/dd9a82d0-52ef-40db-8dab-795376989c03/vcredist_x86.exe
