@@ -26,7 +26,7 @@ cp %{SOURCE2} %{_builddir}/
 install -d %{buildroot}%{_datadir}/%{name}/ISO
 cp %{SOURCE1} %{buildroot}%{_datadir}/%{name}/ISO
 cp -a %{_datadir}/artifacts/ovirt-wgt-installer-iso/* %{buildroot}%{_datadir}/%{name}/ISO
-mkisofs -J -r -lsv -V oVirt-Tools-%{version}-%{release} -p "oVirt - KVM Virtualization Manager Project (www.ovirt.org)" -publisher "oVirt - KVM Virtualization Manager Project (www.ovirt.org)" -o %{buildroot}%{_datadir}/%{name}/oVirt-toolsSetup_%{version}_%{release}.iso %{buildroot}%{_datadir}/%{name}/ISO
+mkisofs -J -r -lsv -V oVirt-Tools-%{version} -p "oVirt - KVM Virtualization Manager Project (www.ovirt.org)" -publisher "oVirt - KVM Virtualization Manager Project (www.ovirt.org)" -o %{buildroot}%{_datadir}/%{name}/oVirt-toolsSetup_%{version}_%{release}.iso %{buildroot}%{_datadir}/%{name}/ISO
 ln -s %{_datadir}/%{name}/oVirt-toolsSetup_%{version}_%{release}.iso %{buildroot}/%{_datadir}/%{name}/ovirt-tools-setup.iso
 rm -rf %{buildroot}%{_datadir}/%{name}/ISO
 
