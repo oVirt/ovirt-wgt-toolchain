@@ -1,11 +1,12 @@
 Name:		virtio-win-drivers
 Version:	0.1
-Release:	96
+Release:	109.1
 Summary:	RPM wrapper for %{name}
 License:	GPLv2
-Source:		https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
-# For latest instead of stable, change Release above and use:
-#Source:	https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win.iso
+#Stable
+#Source:		https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
+#Latest:
+Source:	https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win.iso
 URL:		https://github.com/YanVugenfirer/kvm-guest-drivers-windows/
 BuildArch:	noarch
 BuildRequires:	p7zip
@@ -32,5 +33,6 @@ chmod -R u+w $DST
 %{_datadir}/artifacts/%{name}
 
 %changelog
-* Wed Oct 08 2014 Lev Veyde <lveyde@redhat.com> 0.1-81.1
+* Mon Aug 17 2015 Sandro Bonazzola <sbonazzo@redhat.com> - 0.1-109.1
+* Wed Oct 08 2014 Lev Veyde <lveyde@redhat.com> - 0.1-81.1
 - Initial version
