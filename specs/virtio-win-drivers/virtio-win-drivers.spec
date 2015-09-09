@@ -26,8 +26,8 @@ DST=%{buildroot}%{_datadir}/artifacts/%{name}/
 mkdir -p "${DST}"
 7z -o"${DST}" x "%{SOURCE0}"
 # current iso has the files read-only for the owner
-chmod -R u+w $DST
-
+# And current (109.1) iso also has all files readable only for owner!
+chmod -R u=rwX,g=rX,o=rX $DST
 
 %files
 %{_datadir}/artifacts/%{name}
