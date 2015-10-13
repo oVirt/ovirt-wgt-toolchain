@@ -3,7 +3,7 @@ Version:	3.6.0
 Release:	0.1_master%{?dist}
 Summary:	oVirt Windows Guest Tools Installer
 License:	GPLv2 and GPLv2+ and ASL 2.0 and Zlib and MIT and Python and Platform SDK Redistributable EULA and Microsoft DDK Redistributable EULA
-Source:		http://resources.ovirt.org/pub/ovirt-3.5-snapshot/src/ovirt-wgt-%{version}.tgz
+Source:		http://resources.ovirt.org/pub/ovirt-3.6-snapshot/src/ovirt-wgt/spice-nsis-0.103.tar.gz
 URL:		http://www.ovirt.org/Features/oVirt_Windows_Guest_Tools
 BuildArch:	noarch
 Packager:	Lev Veyde <lveyde@redhat.com>
@@ -21,7 +21,7 @@ oVirt Windows Guest Tools installer.
 The installer includes VirtIO-Win drivers, Spice QXL drivers, as well as oVirt and Spice Guest Agents.
 
 %prep
-%setup -n ovirt-wgt -q
+%setup -n spice-nsis -q
 
 %build
 mkdir -p bin/vdagent_x86 bin/vdagent_x64
@@ -42,17 +42,20 @@ cp %{_datadir}/artifacts/vcredist-x86/vcredist_x86.exe bin/
 cp -a %{_datadir}/artifacts/virtio-win-drivers/* drivers/virtio/
 cp -a %{_datadir}/artifacts/spice-qxl/* drivers/qxl/
 
-makensis -DOVIRT -DEXE_VERSION -D'DISPLAYED_VERSION=%{version}-%{release}' win-guest-tools.nsis
+make installer MAKENSISFLAGS="-DOVIRT -DEXE_VERSION -D'DISPLAYED_VERSION=%{version}-%{release}'"
 
 %install
+SRC=%{_builddir}/%{buildsubdir}
+
 DST=%{buildroot}%{_datadir}/artifacts/%{name}/
 mkdir -p $DST
-cp %{_builddir}/ovirt-wgt/ovirt-guest-tools-setup.exe $DST
+cp $SRC/ovirt-guest-tools-setup.exe $DST
+
 DST=%{buildroot}%{_datadir}/artifacts/%{name}-iso/
 mkdir -p $DST
-cp %{_builddir}/ovirt-wgt/ovirt-guest-tools-setup.exe $DST
-cp -a %{_builddir}/ovirt-wgt/bin $DST
-cp -a %{_builddir}/ovirt-wgt/drivers $DST
+cp $SRC/ovirt-guest-tools-setup.exe $DST
+cp -a $SRC/bin $DST
+cp -a $SRC/drivers $DST
 
 %files
 %{_datadir}/artifacts/%{name}/ovirt-guest-tools-setup.exe
