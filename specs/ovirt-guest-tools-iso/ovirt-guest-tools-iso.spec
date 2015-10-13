@@ -5,7 +5,6 @@ Summary:	oVirt Windows Guest Tools
 License:	GPLv2 and GPLv2+ and ASL 2.0 and Zlib and MIT and Python and Platform SDK Redistributable EULA and Microsoft DDK Redistributable EULA
 Source0:	COPYING.csv
 Source1:	LICENSES
-Source2:	.genisoimagerc
 URL:		http://www.ovirt.org/Features/oVirt_Windows_Guest_Tools
 BuildArch:	noarch
 Packager:	Lev Veyde <lveyde@redhat.com>
@@ -20,12 +19,14 @@ Windows Guest tools ISO for oVirt Virtualization Manager.
 
 %build
 cp %{SOURCE0} %{_builddir}/
-cp %{SOURCE2} %{_builddir}/
 
 %install
 install -d %{buildroot}%{_datadir}/%{name}/ISO
 cp %{SOURCE1} %{buildroot}%{_datadir}/%{name}/ISO
 cp -a %{_datadir}/artifacts/ovirt-wgt-installer-iso/* %{buildroot}%{_datadir}/%{name}/ISO
+
+# Pass -p and -publisher on the command line, because PUBL/PREP in an RC file do not seem to work.
+# TODO restore RC file if/when this is solved.
 mkisofs -J -r -lsv -V oVirt-Tools-%{version} -p "oVirt - KVM Virtualization Manager Project (www.ovirt.org)" -publisher "oVirt - KVM Virtualization Manager Project (www.ovirt.org)" -o %{buildroot}%{_datadir}/%{name}/oVirt-toolsSetup_%{version}_%{release}.iso %{buildroot}%{_datadir}/%{name}/ISO
 ln -s %{_datadir}/%{name}/oVirt-toolsSetup_%{version}_%{release}.iso %{buildroot}/%{_datadir}/%{name}/ovirt-tools-setup.iso
 rm -rf %{buildroot}%{_datadir}/%{name}/ISO
