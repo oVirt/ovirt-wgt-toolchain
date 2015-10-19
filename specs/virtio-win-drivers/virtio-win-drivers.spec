@@ -1,6 +1,6 @@
 Name:		virtio-win-drivers
 Version:	0.1
-Release:	109.1%{?dist}
+Release:	110.2%{?dist}
 Summary:	RPM wrapper for %{name}
 License:	GPLv2
 #Stable
@@ -33,6 +33,7 @@ chmod -R u=rwX,g=rX,o=rX $DST
 %{_datadir}/artifacts/%{name}
 
 %changelog
+* Mon Oct 19 2015 Yedidyah Bar David <didi@redhat.com> - 0.1-110.2
 * Mon Aug 17 2015 Sandro Bonazzola <sbonazzo@redhat.com> - 0.1-109.1
 * Wed Oct 08 2014 Lev Veyde <lveyde@redhat.com> - 0.1-81.1
 - Initial version
