@@ -1,6 +1,6 @@
 Name:		spice-qxl
 Version:	0.1
-Release:	21.1%{?dist}
+Release:	21.2%{?dist}
 Summary:	RPM wrapper for %{name}
 License:	GPLv2+
 Source0:	http://www.spice-space.org/download/windows/qxl/qxl-0.1-21/qxl_xp_x86.zip
@@ -26,13 +26,16 @@ mv %{_builddir}/%{name}/w7 %{_builddir}/%{name}/win7
 mv %{_builddir}/%{name}/2k8R2 %{_builddir}/%{name}/win2k8r2
 
 %install
-DST=%{buildroot}%{_datadir}/artifacts/%{name}/
+DST=%{buildroot}%{_datadir}/%{name}/
 mkdir -p $DST
 cp -av %{_builddir}/%{name}/* $DST
 
 %files
-%{_datadir}/artifacts/%{name}
+%{_datadir}/%{name}
 
 %changelog
+* Tue Oct 20 2015 Yedidyah Bar David <didi@redhat.com> 0.1-21.2
+- dropped "artifacts" from all paths
+
 * Wed Oct 08 2014 Lev Veyde <lveyde@redhat.com> 0.1-21.1
 - Initial version

@@ -22,7 +22,7 @@ A package wrapping %{name} to provide dependency features.
 
 %install
 # Path where the artifact will be installed on the host on rpm -i
-DST=%{buildroot}%{_datadir}/artifacts/%{name}/
+DST=%{buildroot}%{_datadir}/%{name}/
 mkdir -p "${DST}"
 7z -o"${DST}" x "%{SOURCE0}"
 # current iso has the files read-only for the owner
@@ -30,10 +30,12 @@ mkdir -p "${DST}"
 chmod -R u=rwX,g=rX,o=rX $DST
 
 %files
-%{_datadir}/artifacts/%{name}
+%{_datadir}/%{name}
 
 %changelog
-* Mon Oct 19 2015 Yedidyah Bar David <didi@redhat.com> - 0.1-110.2
+* Tue Oct 19 2015 Yedidyah Bar David <didi@redhat.com> - 0.1-110.2
+- dropped "artifacts" from all paths
+
 * Mon Aug 17 2015 Sandro Bonazzola <sbonazzo@redhat.com> - 0.1-109.1
 * Wed Oct 08 2014 Lev Veyde <lveyde@redhat.com> - 0.1-81.1
 - Initial version

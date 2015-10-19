@@ -3,7 +3,7 @@
 
 Name:		%{_basename}-%{_pyver}
 Version:	219
-Release:	1%{?dist}
+Release:	2%{?dist}
 Summary:	RPM wrapper for %{name}
 License:	Python
 Source:		http://sourceforge.net/projects/%{_basename}/files/%{_basename}/Build%20%{version}/%{_basename}-%{version}.win32-%{_pyver}.exe
@@ -19,13 +19,16 @@ install -d %{_builddir}/%{name}
 cp -v %{SOURCE0} %{_builddir}/%{name}
 
 %install
-DST=%{buildroot}%{_datadir}/artifacts/%{name}/
+DST=%{buildroot}%{_datadir}/%{name}/
 mkdir -p $DST
 cp -v %{_builddir}/%{name}/* $DST
 
 %files
-%{_datadir}/artifacts/%{name}
+%{_datadir}/%{name}
 
 %changelog
+* Tue Oct 20 2015 Yedidyah Bar David <didi@redhat.com> 219-2
+- dropped "artifacts" from all paths
+
 * Wed Oct 08 2014 Lev Veyde <lveyde@redhat.com> 219-1
 - Initial release

@@ -1,6 +1,6 @@
 Name:		ovirt-guest-tools-iso
 Version:	3.6.0
-Release:	0.1_master%{?dist}
+Release:	0.2_master%{?dist}
 Summary:	oVirt Windows Guest Tools
 License:	GPLv2 and GPLv2+ and ASL 2.0 and Zlib and MIT and Python and Platform SDK Redistributable EULA and Microsoft DDK Redistributable EULA
 Source0:	COPYING.csv
@@ -23,7 +23,7 @@ cp %{SOURCE0} %{_builddir}/
 %install
 install -d %{buildroot}%{_datadir}/%{name}/ISO
 cp %{SOURCE1} %{buildroot}%{_datadir}/%{name}/ISO
-cp -a %{_datadir}/artifacts/ovirt-wgt-installer-iso/* %{buildroot}%{_datadir}/%{name}/ISO
+cp -a %{_datadir}/ovirt-wgt-installer-iso/* %{buildroot}%{_datadir}/%{name}/ISO
 
 # Pass -p and -publisher on the command line, because PUBL/PREP in an RC file do not seem to work.
 # TODO restore RC file if/when this is solved.
@@ -36,6 +36,10 @@ rm -rf %{buildroot}%{_datadir}/%{name}/ISO
 %doc COPYING.csv
 
 %changelog
+* Tue Oct 20 2015 Yedidyah Bar David <didi@redhat.com> 3.6-2
+- Updated oVirt Guest Agent (1.0.11)
+- dropped "artifacts" from all paths
+
 * Mon Nov 24 2014 Lev Veyde <lveyde@redhat.com> 3.5-7
 - Updated oVirt Guest Agent (1.0.10.3)
 
