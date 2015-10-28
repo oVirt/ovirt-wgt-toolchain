@@ -1,12 +1,12 @@
+%global ver 0.1.110
+%global rel 2
+
 Name:		virtio-win-drivers
-Version:	0.1
-Release:	110.2%{?dist}
+Version:	%{ver}
+Release:	%{rel}%{?dist}
 Summary:	RPM wrapper for %{name}
 License:	GPLv2
-#Stable
-#Source:		https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/stable-virtio/virtio-win.iso
-#Latest:
-Source:	https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/latest-virtio/virtio-win.iso
+Source:	https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-%{ver}-%{rel}/virtio-win-%{ver}.iso
 URL:		https://fedoraproject.org/wiki/Windows_Virtio_Drivers
 BuildArch:	noarch
 BuildRequires:	p7zip
@@ -37,6 +37,9 @@ chmod -R u=rwX,g=rX,o=rX $DST
 %{_datadir}/%{name}
 
 %changelog
+* Wed Oct 28 2015 Yedidyah Bar David <didi@redhat.com> - 0.1.110-2
+- Changed Version/Release scheme to be compatible with upstream
+
 * Tue Oct 19 2015 Yedidyah Bar David <didi@redhat.com> - 0.1-110.2
 - dropped "artifacts" from all paths
 
