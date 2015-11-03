@@ -1,6 +1,6 @@
 Name:		ovirt-guest-tools-iso
-Version:	3.6.0
-Release:	0.2_master%{?dist}
+Version:	3.5
+Release:	8%{?dist}
 Summary:	oVirt Windows Guest Tools
 License:	GPLv2 and GPLv2+ and ASL 2.0 and Zlib and MIT and Python and Platform SDK Redistributable EULA and Microsoft DDK Redistributable EULA
 Source0:	COPYING.csv
@@ -37,8 +37,8 @@ rm -rf %{buildroot}%{_datadir}/%{name}/ISO
 %doc COPYING.csv
 
 %changelog
-* Tue Oct 20 2015 Yedidyah Bar David <didi@redhat.com> 3.6-2
-- Updated oVirt Guest Agent (1.0.11)
+* Tue Nov 03 2015 Yedidyah Bar David <didi@redhat.com> 3.5-8
+- Updated oVirt Guest Agent (1.0.10.4)
 - dropped "artifacts" from all paths
 
 * Mon Nov 24 2014 Lev Veyde <lveyde@redhat.com> 3.5-7
