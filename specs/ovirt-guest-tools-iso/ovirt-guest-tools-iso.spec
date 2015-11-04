@@ -1,6 +1,9 @@
+# Up to two digits, to fit in the iso label
+%global rel 8
+
 Name:		ovirt-guest-tools-iso
 Version:	3.5
-Release:	8%{?dist}
+Release:	%{rel}%{?dist}
 Summary:	oVirt Windows Guest Tools
 License:	GPLv2 and GPLv2+ and ASL 2.0 and Zlib and MIT and Python and Platform SDK Redistributable EULA and Microsoft DDK Redistributable EULA
 Source0:	COPYING.csv
@@ -28,7 +31,7 @@ rsync -aH %{_datadir}/ovirt-wgt-installer-iso/* %{buildroot}%{_datadir}/%{name}/
 
 # Pass -p and -publisher on the command line, because PUBL/PREP in an RC file do not seem to work.
 # TODO restore RC file if/when this is solved.
-mkisofs -J -r -lsv -V oVirt-WGT-%{version} -p "oVirt - KVM Virtualization Manager Project (www.ovirt.org)" -publisher "oVirt - KVM Virtualization Manager Project (www.ovirt.org)" -o %{buildroot}%{_datadir}/%{name}/oVirt-toolsSetup_%{version}_%{release}.iso %{buildroot}%{_datadir}/%{name}/ISO
+mkisofs -J -r -lsv -V oVirt-WGT-%{version}-%{rel} -p "oVirt - KVM Virtualization Manager Project (www.ovirt.org)" -publisher "oVirt - KVM Virtualization Manager Project (www.ovirt.org)" -o %{buildroot}%{_datadir}/%{name}/oVirt-toolsSetup_%{version}_%{release}.iso %{buildroot}%{_datadir}/%{name}/ISO
 ln -s %{_datadir}/%{name}/oVirt-toolsSetup_%{version}_%{release}.iso %{buildroot}/%{_datadir}/%{name}/ovirt-tools-setup.iso
 rm -rf %{buildroot}%{_datadir}/%{name}/ISO
 
