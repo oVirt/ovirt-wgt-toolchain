@@ -11,6 +11,7 @@ Packager:	Lev Veyde <lveyde@redhat.com>
 
 BuildRequires:	genisoimage
 BuildRequires:	ovirt-wgt-installer-iso
+BuildRequires:	rsync
 
 Obsoletes:	ovirt-guest-tools
 
@@ -23,7 +24,7 @@ cp %{SOURCE0} %{_builddir}/
 %install
 install -d %{buildroot}%{_datadir}/%{name}/ISO
 cp %{SOURCE1} %{buildroot}%{_datadir}/%{name}/ISO
-cp -a %{_datadir}/ovirt-wgt-installer-iso/* %{buildroot}%{_datadir}/%{name}/ISO
+rsync -aH %{_datadir}/ovirt-wgt-installer-iso/* %{buildroot}%{_datadir}/%{name}/ISO
 
 # Pass -p and -publisher on the command line, because PUBL/PREP in an RC file do not seem to work.
 # TODO restore RC file if/when this is solved.
