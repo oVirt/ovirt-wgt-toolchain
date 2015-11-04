@@ -1,9 +1,10 @@
 %global ver 0.1.110
 %global rel 2
+%global ovirtrel .1
 
 Name:		virtio-win-drivers
 Version:	%{ver}
-Release:	%{rel}%{?dist}
+Release:	%{rel}%{ovirtrel}%{?dist}
 Summary:	RPM wrapper for %{name}
 License:	GPLv2
 Source:	https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-%{ver}-%{rel}/virtio-win-%{ver}.iso
@@ -11,6 +12,7 @@ URL:		https://fedoraproject.org/wiki/Windows_Virtio_Drivers
 BuildArch:	noarch
 BuildRequires:	p7zip
 BuildRequires:	p7zip-plugins
+BuildRequires:	hardlink
 Packager:	Lev Veyde <lveyde@redhat.com>
 
 %description
@@ -33,10 +35,16 @@ mkdir -p "${DST}"
 # And current (109.1) iso also has all files readable only for owner!
 chmod -R u=rwX,g=rX,o=rX $DST
 
+# Deduplicate. source iso is already so, but 7z does not support hardlinks.
+hardlink -vv $DST
+
 %files
 %{_datadir}/%{name}
 
 %changelog
+* Wed Nov 04 2015 Yedidyah Bar David <didi@redhat.com> - 0.1.110-2.1
+- Re-Deduplicate files
+
 * Wed Oct 28 2015 Yedidyah Bar David <didi@redhat.com> - 0.1.110-2
 - Changed Version/Release scheme to be compatible with upstream
 
