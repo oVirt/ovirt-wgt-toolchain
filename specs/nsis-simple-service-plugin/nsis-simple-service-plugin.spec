@@ -1,6 +1,6 @@
 Name:		nsis-simple-service-plugin
 Version:	1.30
-Release:	1
+Release:	1%{?dist}
 Summary:	RPM wrapper for %{name}
 License:	MPLv1.1 or LGPLv2+
 Source:		http://nsis.sourceforge.net/mediawiki/images/c/c9/NSIS_Simple_Service_Plugin_1.30.zip
