@@ -1,6 +1,12 @@
 oVirt Windows Guest Tools toolchain
 ===================================
 
+> IMPORTANT: This project has been dropped from oVirt.
+>
+> Keeping the following section only for reference.
+
+
+
 This is a collection of scripts/specfiles to help build dependencies
 of ovirt-guest-tools-iso as rpm wrappers around external blobs.
 
